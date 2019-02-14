@@ -1,0 +1,14 @@
+/* LIGHT THEME COLORS */
+
+html.color-theme-in-transition,
+html.color-theme-in-transition *,
+html.color-theme-in-transition *:before,
+html.color-theme-in-transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0ms !important;
+}
+
+html[data-theme='dark'] {
+  --primaryBgColor: #000;
+  --primaryTextColor: #fff;
+}

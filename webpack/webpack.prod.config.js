@@ -8,14 +8,11 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const base = require('./webpack.base.config');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-// var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = ({
   entry, moduleName, buildFolder, context,
   publicPath = '/', plugins = [],
 }) => ({
-  // devtool: 'cheap',
   mode: 'production',
   entry,
   output: {
@@ -31,8 +28,7 @@ module.exports = ({
     extensions: ['.js'],
     modules: [
       'node_modules',
-      path.join(__dirname, '../core/src'),
-      // context || path.resolve(__dirname, '..'),
+      path.join(__dirname, '../src'),
     ],
     cacheWithContext: false,
   },

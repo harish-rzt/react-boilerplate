@@ -1,19 +1,15 @@
 const path = require('path');
-const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const include = [
   path.resolve(__dirname, '../src'),
   path.resolve(__dirname, '../node_modules/@rzt/eva'),
   path.resolve(__dirname, '../node_modules/@rzt/eva-utils'),
-  path.resolve(__dirname, '../node_modules/jsoneditor-react/es'),
-  path.resolve(__dirname, '../node_modules/react-quill'),
 ];
 
 const babeloptions = require('../babel.config.js');
 
 module.exports = {
-  // noParse: [/brace/],
   rules: [
     {
       test: /.worker\.js$/,

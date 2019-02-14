@@ -4,7 +4,7 @@ const WebpackDevServer = require('webpack-dev-server');
 const getConfig = require('./webpack/webpack.dev.config.js');
 
 const PORT = (process.env.PORT || 8000);
-const API_HOST = (process.env.API_HOST || '52.90.104.163');
+const API_HOST = (process.env.API_HOST || '192.168.60.68');
 const API_PORT = (process.env.API_PORT || '');
 const MODULE_NAME = (process.env.MODULE_NAME || 'Default');
 const apiProtocol = process.env.API_PROTOCOL || 'http';
@@ -34,10 +34,6 @@ new WebpackDevServer(webpack(config), {
   },
   proxy: {
     '/rest/permissions': {
-      target: 'http://192.168.50.97:9000/',
-      changeOrigin: true,
-    },
-    '/rest/roles': {
       target: 'http://192.168.50.97:9000/',
       changeOrigin: true,
     },

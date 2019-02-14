@@ -10,18 +10,10 @@ const getConfig = (moduleName, port, entry) => ({
   devtool: 'eval-source-map',
   entry: {
     hot: [
-      // bundle the client for webpack-dev-server
-      // and connect to the provided endpoint
-      // `webpack-dev-server/client?http://localhost:${port}`,
-      // activate HMR for React
       'webpack/hot/dev-server',
       'react-hot-loader/patch',
-      // bundle the client for hot reloading
-      // only- means to only hot reload for successful updates
     ],
     main: [
-      // the entry point of our app
-      // './core/src/index.js',
       entry,
     ],
   },
@@ -54,13 +46,6 @@ const getConfig = (moduleName, port, entry) => ({
     },
     new webpack.HotModuleReplacementPlugin(),
     new webpack.SourceMapDevToolPlugin(),
-    // new webpack.NamedModulesPlugin(),
-    //    new webpack.ContextReplacementPlugin(
-    //      /.*lib/,
-    //      "../../../../../lib/",
-    //      true,
-    //      /^\.\/.*.src.*\..*js/
-    //    ),
     new MiniCssExtractPlugin({
       filename: '[name].[hash].css',
       chunkFilename: '[id].[hash].css',
@@ -78,8 +63,6 @@ const getConfig = (moduleName, port, entry) => ({
     }),
     new CopyWebpackPlugin([
       { from: 'src/images/favicon.png', to: 'favicon.png' },
-//      { from: 'scripts/injectExternalScripts.js', to: 'injectExternalScripts.js' },
-//      { from: 'analytics_tools', to: 'analytics_tools' },
     ], { copyUnmodified: true }),
   ],
   externals: {
