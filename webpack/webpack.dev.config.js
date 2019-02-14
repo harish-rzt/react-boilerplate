@@ -12,6 +12,7 @@ const getConfig = (moduleName, port, entry) => ({
     hot: [
       'webpack/hot/dev-server',
       'react-hot-loader/patch',
+      'babel-polyfill',
     ],
     main: [
       entry,
