@@ -13,3 +13,13 @@
   font-size: 84px;
   padding: 0 60px;
 }
+
+.links{
+  display:flex;
+  padding:30px;
+  color:blue;
+}
+
+.button{
+  margin: 20px;
+}

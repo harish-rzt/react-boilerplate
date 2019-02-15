@@ -33,8 +33,8 @@ export default class App extends Component {
           <button onClick={() => this.setTheme(themeName === 'dark' ? 'light' : 'dark')}>Switch Theme</button>
         </header>
         <span className={styles.links}>
-          <button><Link to='/'>hello page</Link></button>
-          <button><Link to='/counter'>Counter</Link></button>
+          <button className={styles.button}><Link to='/'>hello-page</Link></button>
+          <button className={styles.button}><Link to='/counter'>Counter</Link></button>
         </span>
         <GlobalRouter/>
         {/* <SayHello />

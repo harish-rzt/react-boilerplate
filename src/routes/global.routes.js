@@ -7,7 +7,7 @@ const GlobalRouter = () => {
     return (
         <Switch>
             <Route exact path="/" component={Hello} />
-            <Route path="/counter" component={Counter} />
+            <Route exact path="/counter" component={Counter} />
         </Switch>
     );
 }
