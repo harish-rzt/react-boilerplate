@@ -85,7 +85,7 @@
     "react-async-component": "^2.0.0",
     "react-dom": "^16.7.0",
     "react-redux": "^5.1.1",
-    "react-router": "^4.2.0",
+    "react-router": "^4.3.1",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.8",
     "react-test-renderer": "^16.7.0",

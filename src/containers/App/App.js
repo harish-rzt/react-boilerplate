@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import SayHello from './../../components/SayHello/SayHello';
 import Counter from './../../components/Counter/Counter';
+import GlobalRouter from '../../routes/global.routes';
+import styles from './App.css';
 
 export default class App extends Component {
   constructor(props, context) {
@@ -29,8 +32,13 @@ export default class App extends Component {
         <header>
           <button onClick={() => this.setTheme(themeName === 'dark' ? 'light' : 'dark')}>Switch Theme</button>
         </header>
-        <SayHello />
-        <Counter />
+        <span className={styles.links}>
+          <button><Link to='/'>hello page</Link></button>
+          <button><Link to='/counter'>Counter</Link></button>
+        </span>
+        <GlobalRouter/>
+        {/* <SayHello />
+        <Counter /> */}
       </div>
     )
   }
