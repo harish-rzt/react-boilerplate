@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import RoutesGenerator from '../../RoutesGenerator/RoutesGenerator';
 import styles from './Counter.css';
 import { sagaAddCounter, sagaSubCounter } from '../../actions/global.actions';
 import HelloWorld from '../HelloWorld/HelloWorld';
 import { Switch, Route } from 'react-router-dom';
 import {Link} from 'react-router-dom';
+
+const routes = [ {path:"/counter/helloworld", comp:HelloWorld, exactPath:false},]
 class Counter extends Component {
   constructor(props, context) {
     super(props, context);
@@ -33,9 +36,7 @@ class Counter extends Component {
         <span className={styles.links}>
           <button className={styles.button}><Link to='/counter/helloworld/'>helloworld</Link></button>
         </span>
-        <Switch>
-          <Route path='/counter/helloworld' component={HelloWorld} />
-        </Switch>
+        <RoutesGenerator routes={routes}/>
       </div>
     )
   }
