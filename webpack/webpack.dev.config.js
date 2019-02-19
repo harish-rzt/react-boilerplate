@@ -5,18 +5,19 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const base = require('./webpack.base.config');
 
-const getConfig = (moduleName, port, entry) => ({
+const getConfig = (moduleName, port, entry,vendor) => ({
   context: path.resolve(__dirname, '../'),
   devtool: 'eval-source-map',
   entry: {
     hot: [
       'webpack/hot/dev-server',
       'react-hot-loader/patch',
-      'babel-polyfill',
+      'babel-polyfill'
     ],
     main: [
-      entry,
+      ...entry,
     ],
+    vendor: [...vendor],
   },
   mode: 'development',
   output: {

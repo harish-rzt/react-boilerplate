@@ -10,11 +10,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const base = require('./webpack.base.config');
 
 module.exports = ({
-  entry, moduleName, buildFolder, context,
+  entry, moduleName, buildFolder, context, vendor,
   publicPath = '/', plugins = [],
 }) => ({
   mode: 'production',
-  entry,
+  entry:{
+    main: [
+      ...entry,
+    ],
+    vendor:[...vendor]
+  },
   output: {
     path: path.join(__dirname, '../__build__new', `${buildFolder || 'default'}`),
     filename: `${moduleName ? (`${moduleName}.`) : ''}[name].[contenthash].js`,

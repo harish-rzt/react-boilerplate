@@ -17,6 +17,7 @@
     "start": "concurrently --kill-others \"better-npm-run start-dev\"",
     "start-local": "concurrently --kill-others \"better-npm-run start-local\"",
     "start-qa": "concurrently --kill-others \"better-npm-run start-qa\"",
+    "build": "concurrently --kill-others \"better-npm-run build\"",
     "clean": "rimraf ./__build__",
     "stylelint": "stylelint ./src/**/*.css --fix",
     "eslint": "eslint **/src/**/*.js --fix",
@@ -46,6 +47,17 @@
         "API_HOST": "192.168.60.68",
         "API_PORT": 9090,
         "MODULE_NAME": "Default Dev Server"
+      }
+    },
+    "build": {
+      "description": "This script will build the app",
+      "command": "node --max-old-space-size=8192 ./server.js",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": 8081,
+        "API_HOST": "192.168.60.68",
+        "API_PORT": 9090,
+        "MODULE_NAME": "Prod Server"
       }
     }
   },

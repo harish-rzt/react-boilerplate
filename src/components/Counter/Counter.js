@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import styles from './Counter.css';
 import { sagaAddCounter, sagaSubCounter } from '../../actions/global.actions';
 import HelloWorld from '../HelloWorld/HelloWorld';
-import { Switch, Route } from 'react-router';
+import { Switch, Route } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 class Counter extends Component {
   constructor(props, context) {
@@ -31,7 +31,7 @@ class Counter extends Component {
           onClick={() => this.props.dispatch(sagaAddCounter())}
           className={styles.actionButton}>+</button>
         <span className={styles.links}>
-          <button className={styles.button}><Link to='/counter/helloworld'>helloworld</Link></button>
+          <button className={styles.button}><Link to='/counter/helloworld/'>helloworld</Link></button>
         </span>
         <Switch>
           <Route path='/counter/helloworld' component={HelloWorld} />
