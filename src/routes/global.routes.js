@@ -1,16 +1,20 @@
-import React from 'react';
-import Hello from '../components/SayHello/SayHello';
-import Counter from '../components/Counter/Counter';
-import RoutesGenerator from '../RoutesGenerator/RoutesGenerator';
+import Page1 from '../pages/Page1/Page1';
+import Page2 from '../pages/Page2/Page2';
+import PageNotFound from '../pages/PageNotFound/PageNotFound';
 
-const route=[
-    {path:"/", comp:Hello, exactPath:true},
-    {path:"/counter", comp:Counter, exactPath:false}
-]
-const GlobalRouter = () => {
-    return (
-        <RoutesGenerator routes={route}/>
-    );
-}
-
-export default GlobalRouter;
+export const routes = [
+  {
+    path: '/',
+    component: Page1,
+    exact: true,
+  },
+  {
+    path: '/page2',
+    component: Page2,
+  },
+  {
+    path: '*',
+    component: PageNotFound,
+    exact: true,
+  },
+];

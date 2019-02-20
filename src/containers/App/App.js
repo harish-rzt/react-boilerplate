@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import SayHello from './../../components/SayHello/SayHello';
-import HelloWorld from '../../components/HelloWorld/HelloWorld';
-import Counter from './../../components/Counter/Counter';
-import GlobalRouter from '../../routes/global.routes';
+import { routes } from './../../routes/global.routes';
 import styles from './App.css';
-import RoutesGenerator from '../../RoutesGenerator/RoutesGenerator';
-
-const route = [
-  { path: "/", comp: SayHello, exactPath: true },
-  { path: "/world", comp: HelloWorld, exactPath: false }
-]
+import RoutesGenerator from '../../components/RoutesGenerator/RoutesGenerator';
 
 export default class App extends Component {
   constructor(props, context) {
@@ -39,11 +31,11 @@ export default class App extends Component {
         <header>
           <button onClick={() => this.setTheme(themeName === 'dark' ? 'light' : 'dark')}>Switch Theme</button>
         </header>
-        <div className={styles.links}>
+        <nav className={styles.links}>
           <Link className={styles.button} to='/'>hello-page</Link>
-          <Link className={styles.button} to='/world'>World-page</Link>
-        </div>
-        <RoutesGenerator routes={route} />
+          <Link className={styles.button} to='/page2'>World-page</Link>
+        </nav>
+        <RoutesGenerator routes={routes} />
       </div>
     )
   }

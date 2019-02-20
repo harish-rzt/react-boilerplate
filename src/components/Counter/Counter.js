@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import RoutesGenerator from '../../RoutesGenerator/RoutesGenerator';
+import RoutesGenerator from '../RoutesGenerator/RoutesGenerator';
 import styles from './Counter.css';
 import { sagaAddCounter, sagaSubCounter } from '../../actions/global.actions';
 import HelloWorld from '../HelloWorld/HelloWorld';
