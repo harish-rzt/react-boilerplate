@@ -1,5 +1,4 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
 import Hello from '../components/SayHello/SayHello';
 import Counter from '../components/Counter/Counter';
 import RoutesGenerator from '../RoutesGenerator/RoutesGenerator';

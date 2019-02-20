@@ -4,7 +4,6 @@ import RoutesGenerator from '../../RoutesGenerator/RoutesGenerator';
 import styles from './Counter.css';
 import { sagaAddCounter, sagaSubCounter } from '../../actions/global.actions';
 import HelloWorld from '../HelloWorld/HelloWorld';
-import { Switch, Route } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
 const routes = [ {path:"/counter/helloworld", comp:HelloWorld, exactPath:false},]
@@ -26,16 +25,6 @@ class Counter extends Component {
     const { count } = this.state;
     return (
       <div className={styles.wrapper}>
-        <button
-          onClick={() => this.props.dispatch(sagaSubCounter())}
-          className={styles.actionButton}>-</button>
-        <span className={styles.count}>{this.props.counter}</span>
-        <button
-          onClick={() => this.props.dispatch(sagaAddCounter())}
-          className={styles.actionButton}>+</button>
-        <span className={styles.links}>
-          <button className={styles.button}><Link to='/counter/helloworld/'>helloworld</Link></button>
-        </span>
         <RoutesGenerator routes={routes}/>
       </div>
     )
