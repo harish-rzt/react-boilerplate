@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SayHello from './../../components/SayHello/SayHello';
 import Counter from './../../components/Counter/Counter';
+import { Button } from '@rzt/eva';
 
 export default class App extends Component {
   constructor(props, context) {
@@ -27,7 +28,7 @@ export default class App extends Component {
     return (
       <div>
         <header>
-          <button onClick={() => this.setTheme(themeName === 'dark' ? 'light' : 'dark')}>Switch Theme</button>
+          <Button onClick={() => this.setTheme(themeName === 'dark' ? 'light' : 'dark')}>Switch Theme</Button>
         </header>
         <SayHello />
         <Counter />
