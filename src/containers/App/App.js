@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import { Link} from 'react-router-dom';
 import { routes } from './../../routes/global.routes';
 import styles from './App.css';
 import RoutesGenerator from '../../components/RoutesGenerator/RoutesGenerator';
-=======
 import SayHello from './../../components/SayHello/SayHello';
 import Counter from './../../components/Counter/Counter';
 import { Button } from '@rzt/eva';
->>>>>>> 04a95acccbdcddf34349183a857654d39e5f824e
 
 class App extends Component {
   constructor(props, context) {
