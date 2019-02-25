@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
 import { routes } from './../../routes/global.routes';
+import {connect} from 'react-redux';
 import styles from './App.css';
 import RoutesGenerator from '../../components/RoutesGenerator/RoutesGenerator';
-import SayHello from './../../components/SayHello/SayHello';
-import Counter from './../../components/Counter/Counter';
 import { Button } from '@rzt/eva';
 
 class App extends Component {
@@ -44,7 +43,13 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state, ownProps){
+  return({
+    counter:state.counter,
+  })
+}
+
+export default connect(mapStateToProps)(App);
 
 App.propTypes = {};
 
