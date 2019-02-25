@@ -4,16 +4,21 @@ import PageNotFound from '../pages/PageNotFound/PageNotFound';
 
 export const routes = [
   {
-    path: '/',
+    path:"/",
+    type:"redirect",
+    to:"/home"
+  },
+  {
+    path: "/home",
     component: Page1,
-    exact: true,
   },
   {
-    path: '/page2',
+    path: "/page2",
     component: Page2,
+    exact: false,
   },
   {
-    path: '*',
+    path: "*",
     component: PageNotFound,
     exact: true,
   },

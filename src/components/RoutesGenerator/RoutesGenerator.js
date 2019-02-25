@@ -6,7 +6,9 @@ const RoutesGenerator = ({ routes }) => {
         <Switch>
             {routes.map(({ path, exact = false, component, type, from, to }, index) => {
                 if (type === 'redirect') {
-                  return <Redirect from={from} to={to} key={index} />;
+                  return  <Route exact path={path} render={()=>(
+                   <Redirect to={to} />         
+                  )} />
                 } else {
                   return <Route exact={exact} path={path} component={component} key={index} />;
                 }

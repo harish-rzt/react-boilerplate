@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { routes } from './../../routes/global.routes';
 import styles from './App.css';
 import RoutesGenerator from '../../components/RoutesGenerator/RoutesGenerator';
 
-export default class App extends Component {
+class App extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -32,14 +32,16 @@ export default class App extends Component {
           <button onClick={() => this.setTheme(themeName === 'dark' ? 'light' : 'dark')}>Switch Theme</button>
         </header>
         <nav className={styles.links}>
-          <Link className={styles.button} to='/'>hello-page</Link>
-          <Link className={styles.button} to='/page2'>World-page</Link>
+          <Link className={styles.button} to="/">hello-page</Link>
+          <Link className={styles.button} to="/page2">World-page</Link>
         </nav>
         <RoutesGenerator routes={routes} />
       </div>
     )
   }
 }
+
+export default App;
 
 App.propTypes = {};
 
