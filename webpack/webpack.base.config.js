@@ -45,7 +45,7 @@ module.exports = {
         path.resolve(__dirname, '../src'),
         path.resolve(__dirname, '../node_modules/@rzt/eva'),
       ],
-      exclude: [/global.css/, /flaticon.css/],
+      exclude: [/global.css/, /flaticon.css/, /iconmoon.css/],
       use: [
         MiniCssExtractPlugin.loader,
         {
@@ -61,7 +61,7 @@ module.exports = {
       ],
     },
     {
-      test: [/global.css/, /flaticon.css/],
+      test: [/global.css/, /flaticon.css/, /iconmoon.css/],
       include,
       use: [
         MiniCssExtractPlugin.loader,
