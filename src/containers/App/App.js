@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link} from 'react-router-dom';
+import { Link,withRouter} from 'react-router-dom';
 import { routes } from './../../routes/global.routes';
 import {connect} from 'react-redux';
 import styles from './App.css';
@@ -50,6 +50,8 @@ function mapStateToProps(state, ownProps){
 }
 
 export default connect(mapStateToProps)(App);
+
+// export default App;
 
 App.propTypes = {};
 

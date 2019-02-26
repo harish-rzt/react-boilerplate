@@ -10,7 +10,7 @@ const RoutesGenerator = ({ routes }) => {
                    <Redirect to={to} />         
                   )} />
                 } else {
-                  return <Route exact={exact} path={path} component={component} key={index} />;
+                  return <Route exact={exact} path={path} component={component} key={path} />;
                 }
             })}
         </Switch>
