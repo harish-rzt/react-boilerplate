@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import RoutesGenerator from '../RoutesGenerator/RoutesGenerator';
 import styles from './Counter.css';
 import { sagaAddCounter, sagaSubCounter } from '../../actions/global.actions';
-import HelloWorld from '../HelloWorld/HelloWorld';
+//import HelloWorld from '../HelloWorld/HelloWorld';
 import {Link} from 'react-router-dom';
 
-const routes = [ {path:"/counter/helloworld", comp:HelloWorld, exactPath:false},]
+//const routes = [ {path:"/counter/helloworld", comp:HelloWorld, exactPath:false},]
 class Counter extends Component {
   constructor(props, context) {
     super(props, context);
