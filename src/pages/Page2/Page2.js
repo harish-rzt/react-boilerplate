@@ -1,7 +1,6 @@
 import React from 'react';
 import { routes } from './Page2.routes';
-import { Link } from 'react-router-dom';
-import {withRouter} from 'react-router';
+import { Link , withRouter} from 'react-router-dom';
 import RoutesGenerator from './../../components/RoutesGenerator/RoutesGenerator';
 
 class Page2 extends React.Component {
@@ -21,4 +20,4 @@ class Page2 extends React.Component {
   }
 }
 
-export default Page2;
+export default withRouter(Page2);

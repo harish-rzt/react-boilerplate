@@ -1,4 +1,4 @@
-import {ADD_COUNTER,SUB_COUNTER} from '../constants/global.constants'
+import {ADD_COUNTER,SUB_COUNTER, NAME_CHANGE} from '../constants/global.constants'
 
 export function counterReducer(state=777,action){
     switch(action.type){
@@ -9,5 +9,15 @@ export function counterReducer(state=777,action){
             return state-1;
         };break;
         default :return state;
+    }
+}
+
+
+export function nameReducer(state="jack", action){
+    switch(action.type){
+        case NAME_CHANGE:{
+            return action.payload;
+        }
+        default: return state;
     }
 }

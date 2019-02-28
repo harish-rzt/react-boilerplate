@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import RoutesGenerator from './../../components/RoutesGenerator/RoutesGenerator';
 import { routes } from './Page1.routes';
 
@@ -20,4 +20,4 @@ class Page1 extends React.Component {
   }
 }
 
-export default Page1;
+export default withRouter(Page1);

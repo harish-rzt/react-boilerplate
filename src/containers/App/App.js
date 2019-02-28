@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       themeName: 'dark',
     };
+    console.log("store received is ", props.store)
   }
 
   setTheme = (themeName, noTransition = false) => {
@@ -49,7 +50,7 @@ function mapStateToProps(state, ownProps){
   })
 }
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));
 
 // export default App;
 

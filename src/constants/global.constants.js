@@ -3,3 +3,5 @@ export const SUB_COUNTER = 'SUB_COUNTER';
 
 export const SAGA_ADD_COUNTER = 'SAGA_ADD_COUNTER';
 export const SAGA_SUB_COUNTER = 'SAGA_SUB_COUNTER';
+
+export const NAME_CHANGE = 'NAME_CHANGE';

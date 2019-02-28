@@ -2,8 +2,8 @@ import {modifyReducer} from './modifyReducers';
 import {createStore} from 'redux';
 import createReducers from './createReducers';
 
-export default function configureStore(initialState,action,asyncReducers) {
-    const store = createStore(createReducers(), initialState);
+export default function configureStore() {
+    const store = createStore(createReducers(null));
     store.asyncReducers = {}
     return store
 }
@@ -11,8 +11,8 @@ export default function configureStore(initialState,action,asyncReducers) {
 export function reConfigureStore(store){
     const {injectReducer,removeReducer}=modifyReducer(store)
     if(action=='ADD')
-        injectReducer(asyncReducers);
+        injectReducer(store, asyncReducers);
     if(action=='DELETE')
-        removeReducer(asyncReducers);
+        removeReducer(store, asyncReducers);
     return store
 }
