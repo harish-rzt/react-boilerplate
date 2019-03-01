@@ -14,7 +14,7 @@ const newReducer={name:nameReducer}
 const history = createBrowserHistory();
 const store=configureStore();
 setTimeout(()=>{
-  store=reConfigureStore(store,'ADD',newReducer);  //dynamically adding a reducer to store
+  reConfigureStore(store,'ADD',newReducer);  //dynamically adding a reducer to store
 }, 10000)
 ReactDOM.render(
 
