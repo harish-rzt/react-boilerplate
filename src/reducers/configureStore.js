@@ -8,11 +8,11 @@ export default function configureStore() {
     return store
 }
 
-export function reConfigureStore(store){
+export function reConfigureStore(store,action,asyncReducers){
     const {injectReducer,removeReducer}=modifyReducer(store)
     if(action=='ADD')
-        injectReducer(store, asyncReducers);
+        injectReducer(asyncReducers);
     if(action=='DELETE')
-        removeReducer(store, asyncReducers);
+        removeReducer(asyncReducers);
     return store
 }

@@ -10,11 +10,11 @@ export const routes = [
   },
   {
     path: "/home",
-    component: Page1,
+    component: Page1,//import('../pages/Page1/Page1'),
   },
   {
     path: "/page2",
-    component: Page2,
+    component: Page2,//import('../pages/Page1/Page1'),
     exact: false,
   },
   {

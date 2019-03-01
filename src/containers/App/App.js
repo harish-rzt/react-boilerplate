@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import styles from './App.css';
 import RoutesGenerator from '../../components/RoutesGenerator/RoutesGenerator';
 import { Button } from '@rzt/eva';
+import {addCounter} from '../../actions/global.actions'
 
 class App extends Component {
   constructor(props, context) {
@@ -12,9 +13,7 @@ class App extends Component {
     this.state = {
       themeName: 'dark',
     };
-    console.log("store received is ", props.store)
   }
-
   setTheme = (themeName, noTransition = false) => {
     if (!themeName) return;
     document.documentElement.setAttribute('data-theme', themeName);
@@ -28,6 +27,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("store received is ", localStorage.getItem('store'));
     const { themeName } = this.state;
     return (
       <div>
@@ -38,6 +38,10 @@ class App extends Component {
           <Link className={styles.button} to="/">hello-page</Link>
           <Link className={styles.button} to="/page2">World-page</Link>
         </nav>
+        <div>
+          <h2>counter : {this.props.counter}</h2>
+          <button onClick={()=>this.props.dispatch(addCounter())}>add</button>
+        </div>
         <RoutesGenerator routes={routes} />
       </div>
     )
@@ -47,6 +51,7 @@ class App extends Component {
 function mapStateToProps(state, ownProps){
   return({
     counter:state.counter,
+    name:state.name,
   })
 }
 

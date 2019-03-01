@@ -7,14 +7,21 @@ import {Provider} from 'react-redux';
 import App from './containers/App/App';
 import './global.css';
 import configureStore from './reducers/configureStore';
+import {reConfigureStore} from './reducers/configureStore';
+import {nameReducer} from './reducers/global.reducers';
 
-const history = createBrowserHistory
+const newReducer={name:nameReducer}
+const history = createBrowserHistory();
 const store=configureStore();
-
+setTimeout(()=>{
+  store=reConfigureStore(store,'ADD',newReducer);  //dynamically adding a reducer to store
+}, 10000)
 ReactDOM.render(
+
   <Provider store={store}>
   <BrowserRouter>
-    <App />
+  <App/>
   </BrowserRouter>
   </Provider>
+
   , document.getElementById('root'));
